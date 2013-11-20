@@ -1,0 +1,51 @@
+body {
+  font-size: 100px;
+}
+#container {
+  position: relative;
+}
+.table {
+  border-collapse: collapse;
+}
+.table td {
+  border: 1px solid #333;
+  width: 120px;
+  height: 120px;
+}
+#l1, #l2, #o1, #o2 {
+  position: absolute;
+}
+#l1, #l2 {
+  border-left: 122px solid;
+  border-top: 122px solid;
+  width: 124px;
+  height: 246px;
+  cursor: pointer;
+}
+#l1 {
+  border-color: blue;
+  top: 1px;
+  left: 124px;
+}
+#l2 {
+  border-color: red;
+  top: 124px;
+  left: 123px;
+  transform: rotateX(180deg);
+  -webkit-transform: rotateZ(180deg);
+}
+#o1, #o2 {
+  background: #333;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  cursor: pointer;
+}
+#o1 {
+  top: 2px;
+  left: 2px;
+}
+#o2 {
+  top: 371px;
+  left: 371px;
+}
