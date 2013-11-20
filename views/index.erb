@@ -8,40 +8,75 @@
       body {
         font-size: 100px;
       }
+      #container {
+        position: relative;
+      }
       .table {
         border-collapse: collapse;
       }
       .table td {
         border: 1px solid #333;
+        width: 120px;
+        height: 120px;
+      }
+      #l1, #l2, #o1, #o2 {
+        position: absolute;
+      }
+      #l1, #l2 {
+        border-left: 122px solid;
+        border-top: 122px solid;
+        width: 124px;
+        height: 246px;
+        cursor: pointer;
+      }
+      #l1 {
+        border-color: blue;
+      }
+      #l2 {
+        border-color: red;
+      }
+      #o1, #o2 {
+        background: #333;
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <table class="table">
-      <tr>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      </tr>
-    </table>
+    <div id="container">
+      <table class="table">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <div id="l1"></div>
+      <div id="l2"></div>
+      <div id="o1"></div>
+      <div id="o2"></div>
+    </div>
   </body>
 </html>
