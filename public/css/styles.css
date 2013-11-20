@@ -49,3 +49,22 @@ body {
   top: 371px;
   left: 371px;
 }
+#start-togetherjs {
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background .1s linear;
+  transition: background .1s linear;
+  background-color: #00B5AD;
+  border-color: #00B5AD;
+  color: white;
+  font-size: 20px;
+}
+#start-togetherjs:hover {
+  background-color: #009A93;
+  border-color: #009A93;
+}
