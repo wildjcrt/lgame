@@ -51,6 +51,42 @@ body {
   top: 371px;
   left: 371px;
 }
+.rotate, .flipover {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  padding: 7px 3px 0;
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+.rotate::after, .flipover::after {
+  content: "";
+  background: #333;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+#l1 .rotate, #l2 .rotate {
+  left: -80px;
+  top: -120px;
+}
+#l1 .flipover, #l2 .flipover {
+  left: -150px;
+  top: -60px;
+}
+
 #start-togetherjs {
   border: 0;
   padding: 10px 20px;
