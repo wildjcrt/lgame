@@ -79,6 +79,7 @@
         $("#o1").draggable();
         $("#o2").draggable();
 
+        // L pieces action
         var rotate, flipover, target;
         $(".rotate").click(function(){
           target   = $(this).parent("div");
@@ -96,6 +97,11 @@
                  "-o-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
                     "transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)"
           });
+
+          // sync pieces
+          if (TogetherJS.running) {
+            TogetherJS.send({type: "piece-change", element: '#' + target.attr('id'), inlineStyle: target.attr('style')});
+          }
         });
 
         $(".flipover").click(function(){
@@ -117,6 +123,38 @@
                  "-o-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
                     "transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)"
           });
+
+          // sync pieces
+          if (TogetherJS.running) {
+            TogetherJS.send({type: "piece-change", element: '#' + target.attr('id'), inlineStyle: target.attr('style')});
+          }
+        });
+
+        // sync pieces
+        $('#l1').on('mouseup', function() {
+          if (TogetherJS.running) {
+            TogetherJS.send({type: "piece-change", element: '#l1', inlineStyle: $(this).attr('style')});
+          }
+        })
+        $('#l2').on('mouseup', function() {
+          if (TogetherJS.running) {
+            TogetherJS.send({type: "piece-change", element: '#l2', inlineStyle: $(this).attr('style')});
+          }
+        })
+        $('#o1').on('mouseup', function() {
+          if (TogetherJS.running) {
+            TogetherJS.send({type: "piece-change", element: '#o1', inlineStyle: $(this).attr('style')});
+          }
+        })
+        $('#o2').on('mouseup', function() {
+          if (TogetherJS.running) {
+            TogetherJS.send({type: "piece-change", element: '#o2', inlineStyle: $(this).attr('style')});
+          }
+        })
+
+        // listen piece-change
+        TogetherJS.hub.on("piece-change", function (msg) {
+          $(msg.element).attr('style', msg.inlineStyle);
         });
       });
     </script>
