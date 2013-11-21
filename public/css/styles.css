@@ -90,3 +90,25 @@ body {
   background-color: #009A93;
   border-color: #009A93;
 }
+
+h1 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 20px;
+  margin-top: 0;
+}
+#rule {
+  width: 60%;
+}
+#rule p, #rule li {
+  font-size: 20px;
+  line-height: 1.7em;
+}
+#rule ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
