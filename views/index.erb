@@ -37,11 +37,11 @@
         </tr>
       </table>
 
-      <div id="l1">
+      <div id="l1" data-rotate=0 data-flipover=0>
         <span class="rotate">R</span>
         <span class="flipover">T</span>
       </div>
-      <div id="l2">
+      <div id="l2" data-rotate=180 data-flipover=0>
         <span class="rotate">R</span>
         <span class="flipover">T</span>
       </div>
@@ -56,6 +56,43 @@
         $("#l2").draggable();
         $("#o1").draggable();
         $("#o2").draggable();
+
+        var rotate, flipover, target;
+        $(".rotate").click(function(){
+          target   = $(this).parent("div");
+          flipover = target.data("flipover");
+          rotate   = target.data("rotate") + 90;
+          if (rotate === 360) {
+            rotate = 0;
+          }
+          target.data("rotate", rotate);
+
+          target.css({
+            "-webkit-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
+               "-moz-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
+                "-ms-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
+                 "-o-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
+                    "transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)"
+          });
+        });
+
+        $(".flipover").click(function(){
+          target = $(this).parent("div");
+          rotate   = target.data("rotate");
+          flipover = target.data("flipover") + 180;
+          if (flipover === 360) {
+            flipover = 0;
+          }
+          target.data("flipover", flipover);
+
+          target.css({
+            "-webkit-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
+               "-moz-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
+                "-ms-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
+                 "-o-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
+                    "transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)"
+          });
+        });
       });
     </script>
   </body>
