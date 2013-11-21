@@ -23,12 +23,12 @@ body {
   cursor: pointer;
 }
 #l1 {
-  border-color: blue;
+  border-color: #81D8D0;
   top: 1px;
   left: 124px;
 }
 #l2 {
-  border-color: red;
+  border-color: #ED1C24;
   top: 124px;
   left: 123px;
   -webkit-transform: rotateZ(180deg);
