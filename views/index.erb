@@ -103,6 +103,9 @@
           flipover = target.data("flipover") + 180;
           if (flipover === 360) {
             flipover = 0;
+            $('.fa-undo').attr('class', 'fa fa-repeat fa-stack-1x');
+          } else {
+            $('.fa-repeat').attr('class', 'fa fa-undo fa-stack-1x');
           }
           target.data("flipover", flipover);
 
