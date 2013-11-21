@@ -36,6 +36,8 @@ body {
 }
 #o1, #o2 {
   background: #333;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
   height: 120px;
   width: 120px;
@@ -52,6 +54,8 @@ body {
 #start-togetherjs {
   border: 0;
   padding: 10px 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
