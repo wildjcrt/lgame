@@ -17,11 +17,11 @@ $(document).ready(function () {
     target.data("rotate", rotate);
 
     target.css({
-      "-webkit-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
-         "-moz-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
-          "-ms-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
-           "-o-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
-              "transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)"
+      "-webkit-transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")",
+         "-moz-transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")",
+          "-ms-transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")",
+           "-o-transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")",
+              "transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")"
     });
 
     // sync pieces
@@ -33,21 +33,22 @@ $(document).ready(function () {
   $(".flipover").click(function(){
     target = $(this).parent("div");
     rotate   = target.data("rotate");
-    flipover = target.data("flipover") + 180;
-    if (flipover === 360) {
-      flipover = 0;
-      $('.fa-undo').attr('class', 'fa fa-repeat fa-stack-1x');
-    } else {
+    flipover = target.data("flipover");
+    if (flipover === 1) {
+      flipover = -1;
       $('.fa-repeat').attr('class', 'fa fa-undo fa-stack-1x');
+    } else {
+      $('.fa-undo').attr('class', 'fa fa-repeat fa-stack-1x');
+      flipover = 1;
     }
     target.data("flipover", flipover);
 
     target.css({
-      "-webkit-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
-         "-moz-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
-          "-ms-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
-           "-o-transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)",
-              "transform": "rotateZ(" + rotate + "deg)" + "rotateY(" + flipover + "deg)"
+      "-webkit-transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")",
+         "-moz-transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")",
+          "-ms-transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")",
+           "-o-transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")",
+              "transform": "rotateZ(" + rotate + "deg)" + "scaleX(" + flipover + ")"
     });
 
     // sync pieces
